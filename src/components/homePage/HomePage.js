@@ -9,6 +9,7 @@ const Home = () => {
           <LogoutIcon />
         </button>
       </Link>
+
     </div>
   );
 };

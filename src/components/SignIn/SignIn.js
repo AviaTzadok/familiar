@@ -84,11 +84,12 @@ export default function SignIn() {
                 alignItems: "center",
               }}
             >
+
               <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
                 <LockOutlinedIcon />
               </Avatar>
               <Typography component="h1" variant="h6">
-                Sign in
+                Sign in pl
               </Typography>
               <Box
                 component="form"

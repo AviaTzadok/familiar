@@ -7,6 +7,7 @@ import {
   Route,
   useParams,
 } from "react-router-dom";
+import Level1 from "./components/levels/level1/Level1";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Routes>
           <Route exact path="/" element={<SingIn />} />
           <Route exact path="/Home" element={<HomePage />} />
+          <Route exact path="/Level1" element={<Level1 />} />
         </Routes>
       </Router>
     </div>
