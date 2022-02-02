@@ -84,7 +84,10 @@ export default function SignIn() {
                 alignItems: "center",
               }}
             >
-
+              {/* temparary */}
+              <LinkUp to={'/Level1'}>
+                <button>1</button>
+              </LinkUp>
               <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
                 <LockOutlinedIcon />
               </Avatar>
