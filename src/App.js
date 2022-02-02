@@ -1,5 +1,6 @@
 import SingIn from "./components/SignIn/SignIn";
-import HomePage from "./components/homePage/HomePage";
+import HomePage from "./components/HomePage/HomePage";
+import Level1 from "./components/Levels/Level1/Level1";
 import "./App.css";
 import {
   BrowserRouter as Router,
@@ -7,7 +8,6 @@ import {
   Route,
   useParams,
 } from "react-router-dom";
-import Level1 from "./components/levels/level1/Level1";
 
 function App() {
   return (
