@@ -3,6 +3,9 @@ margin-top: 10%;
     width: 40%;
     margin-bottom: 10%;
 }
+.Level1 .image_container{
+    height: 20rem;
+}
 .Level1 .name{
     font-size: x-large;
     padding: 10%;   
