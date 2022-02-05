@@ -1,10 +1,10 @@
 .Level1 .image{
-margin-top: 10%;
-    width: 40%;
-    margin-bottom: 10%;
+margin-top: 3%;
+    height: 80%;
+    margin-bottom: 20%;
 }
 .Level1 .image_container{
-    height: 20rem;
+    height: 40rem;
 }
 .Level1 .name{
     font-size: x-large;

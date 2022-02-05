@@ -1,5 +1,5 @@
 import './Level1.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
 import ArrowCircleLeftIcon from '@mui/icons-material/ArrowCircleLeft';
 import CloseIcon from '@mui/icons-material/Close';
@@ -13,7 +13,7 @@ const Level1 = () => {
     },
     {
         name: "משה",
-        img: 'https://fakestoreapi.com/img/61mtL65D4cL._AC_SX679_.jpg'
+        img: 'https://fakestoreapi.com/img/81Zt42ioCgL._AC_SX679_.jpg'
     },
     {
         name: "מרים",
@@ -21,28 +21,26 @@ const Level1 = () => {
     }]
     const dataIndexes = data.length - 1;
 
-    const skip = () => {
-        console.log('skip', index);
-        if (index === dataIndexes) {
-            setIndex(0)
-        } else {
-            setIndex(index + 1)
-        }
+    useEffect(() => {
+        const time = setInterval(skip, 7000)
+        return () => clearInterval(time)
+    }
+        , [])
+    function skip() {
+        console.log(index);
+        console.log(dataIndexes);
+        index === dataIndexes ? setIndex(0) : setIndex(prevIndex => prevIndex + 1)
     }
     const previous = () => {
         console.log('pre', index);
-        if (index === 0) {
-            console.log(data.length - 1);
-            setIndex(dataIndexes)
-        } else {
-            setIndex(index - 1)
-        }
+        index === 0 ? setIndex(dataIndexes) : setIndex(index - 1)
     }
-    const time = setInterval(skip, 7000)
+
     const stop = () => {
-        clearInterval(time)
+        // clearInterval(time)
+        console.log('stop');
     }
-    const timeStop = setTimeout(stop, dataIndexes * 7000)
+
 
 
     return (
