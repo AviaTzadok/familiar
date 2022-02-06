@@ -1,5 +1,5 @@
 import './Level1.css';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
 import ArrowCircleLeftIcon from '@mui/icons-material/ArrowCircleLeft';
 import CloseIcon from '@mui/icons-material/Close';
@@ -22,26 +22,26 @@ const Level1 = () => {
     const dataIndexes = data.length - 1;
 
     useEffect(() => {
-        const time = setInterval(skip, 7000)
+        const time = setInterval(skip, 3000)
         return () => clearInterval(time)
     }
         , [])
-    function skip() {
-        console.log(index);
-        console.log(dataIndexes);
-        index === dataIndexes ? setIndex(0) : setIndex(prevIndex => prevIndex + 1)
+
+
+    // TODO check why index inside function is 0 allways
+    const skip = () => {
+        setIndex(prevIndex => (prevIndex + 1) % data.length);
     }
+
     const previous = () => {
         console.log('pre', index);
-        index === 0 ? setIndex(dataIndexes) : setIndex(index - 1)
+        index === 0 ? setIndex(dataIndexes) : setIndex(index - 1);
     }
 
     const stop = () => {
-        // clearInterval(time)
         console.log('stop');
     }
-
-
+    console.log('https://fakestoreapi.com/img/61mtL65D4cL._AC_SX679_.jpg')
 
     return (
         <div className='Level1'>
@@ -50,11 +50,14 @@ const Level1 = () => {
             </div>
             <Box className="controlers">
                 <ArrowCircleLeftIcon
+                    sx={{ fontSize: 40 }}
                     onClick={() => { previous() }} />
                 <span className='name'>{data[index].name}</span>
                 <ArrowCircleRightIcon
+                    sx={{ fontSize: 40 }}
                     onClick={() => { skip() }} />
                 <CloseIcon
+                    sx={{ fontSize: 40 }}
                     onClick={() => { stop() }} />
             </Box>
         </div>
