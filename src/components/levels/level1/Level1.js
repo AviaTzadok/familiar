@@ -1,5 +1,5 @@
 import './Level1.css';
-import { useCallback, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
 import ArrowCircleLeftIcon from '@mui/icons-material/ArrowCircleLeft';
 import CloseIcon from '@mui/icons-material/Close';
@@ -22,7 +22,7 @@ const Level1 = () => {
     const dataIndexes = data.length - 1;
 
     useEffect(() => {
-        const time = setInterval(skip, 3000)
+        const time = setInterval(skip, 7000)
         return () => clearInterval(time)
     }
         , [])
